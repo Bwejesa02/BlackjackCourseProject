@@ -1,3 +1,13 @@
+Contributers: AJ Bwejesa 100792221
+
+I acknowledge that all assets are self made
+Resources used include: 
+lectures for reference
+lab for reference
+stack overflow for reference
+unity documentation for reference
+ChatGPT was used as a reference for debugging ideation only
+
 SCENARIO DESCRIPTION
 Purpose: small casino-style Blackjack experience to demonstrate patterns and optimization.
 Player’s goal: win chips by beating the dealer in Blackjack.
