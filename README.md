@@ -7,6 +7,7 @@ lab for reference
 stack overflow for reference
 unity documentation for reference
 ChatGPT was used as a reference for debugging ideation only
+Google Images for slide pictures
 
 SCENARIO DESCRIPTION
 Purpose: small casino-style Blackjack experience to demonstrate patterns and optimization.
