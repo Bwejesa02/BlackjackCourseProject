@@ -1010,7 +1010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blackjack.Final.CardPool_Final
   cardPrefab: {fileID: 5565689273161302666, guid: a698a3118147dac47a736bf13a156832, type: 3}
-  initialSize: 104
+  initialSize: 60
 --- !u!4 &706819404
 Transform:
   m_ObjectHideFlags: 0

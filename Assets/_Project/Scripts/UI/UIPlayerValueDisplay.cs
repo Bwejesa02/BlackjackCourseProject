@@ -27,7 +27,7 @@ namespace Blackjack.Final
         {
             if (playerValueText != null)
             {
-                // If you want to hide initial "0", you can handle that by checking state.
+                
                 playerValueText.text = $"Value: {value}";
             }
         }

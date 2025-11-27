@@ -1,4 +1,4 @@
-using Blackjack.Baseline;  // For CardData and CardView_Baseline
+using Blackjack.Baseline;
 using UnityEngine;
 
 namespace Blackjack.Final

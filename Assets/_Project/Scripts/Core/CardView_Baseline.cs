@@ -30,7 +30,7 @@ namespace Blackjack.Baseline
             }
             else
             {
-                // Example: "A♠" or "10♥"
+                // example "10♥"
                 labelText.text = _data.ToString();
             }
 

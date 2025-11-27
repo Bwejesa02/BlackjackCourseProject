@@ -47,7 +47,7 @@ namespace Blackjack.Baseline
         private bool dealerHiddenCardFaceDown;
 
         private CardView_Baseline dealerHiddenCardView;
-        private int dealerHiddenCardIndex = -1; // index in dealerHand
+        private int dealerHiddenCardIndex = -1; 
 
         private void Start()
         {
@@ -73,7 +73,6 @@ namespace Blackjack.Baseline
             if (resultBannerText != null) resultBannerText.text = "";
         }
 
-        #region Deck & Dealing
 
         private void InitDeck()
         {
@@ -89,7 +88,6 @@ namespace Blackjack.Baseline
 
         private void ShuffleDeck()
         {
-            // Fisher-Yates shuffle
             for (int i = 0; i < deck.Count; i++)
             {
                 int swapIndex = Random.Range(i, deck.Count);
@@ -112,9 +110,7 @@ namespace Blackjack.Baseline
             return top;
         }
 
-        #endregion
 
-        #region UI Helpers
 
         private void UpdateBalanceUI()
         {
@@ -193,9 +189,7 @@ namespace Blackjack.Baseline
             }
         }
 
-        #endregion
 
-        #region Hand Calculation
 
         private int CalculateHandTotal(List<CardData> hand)
         {
@@ -216,14 +210,14 @@ namespace Blackjack.Baseline
                 }
                 else
                 {
-                    value = 11; // Ace as 11 initially
+                    value = 11; // Default Ace value
                     aceCount++;
                 }
 
                 total += value;
             }
 
-            // If over 21, turn some Aces into 1
+            // If over 21, turn Aces into 1
             while (total > 21 && aceCount > 0)
             {
                 total -= 10; // 11 -> 1
@@ -233,9 +227,7 @@ namespace Blackjack.Baseline
             return total;
         }
 
-        #endregion
 
-        #region Round Flow
 
         public void OnDealButtonClicked()
         {
@@ -456,6 +448,5 @@ namespace Blackjack.Baseline
             if (nextRoundButton != null) nextRoundButton.interactable = false;
         }
 
-        #endregion
     }
 }

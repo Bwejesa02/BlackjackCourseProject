@@ -37,14 +37,14 @@ namespace Blackjack.Final
         [SerializeField] private int fixedBetAmount = 10;
         [SerializeField] private int reshuffleThreshold = 15;
 
-        // EVENTS (Observer)
+        // events
         public event Action<BlackjackState> OnStateChanged;
         public event Action<int> OnBalanceChanged;
         public event Action<int> OnPlayerValueChanged;
-        public event Action<int?> OnDealerValueChanged; // null when hidden
+        public event Action<int?> OnDealerValueChanged;
         public event Action<string> OnResultChanged;
 
-        // Internal state
+        
         private BlackjackState _currentState;
 
         private List<CardData> deck = new List<CardData>();
@@ -87,14 +87,13 @@ namespace Blackjack.Final
 
             if (OnResultChanged != null) OnResultChanged(string.Empty);
 
-            // Button states
+            // states
             if (dealButton != null) dealButton.interactable = true;
             if (hitButton != null) hitButton.interactable = false;
             if (standButton != null) standButton.interactable = false;
             if (nextRoundButton != null) nextRoundButton.interactable = false;
         }
 
-        #region Events Helpers
 
         private void SetState(BlackjackState newState)
         {
@@ -111,7 +110,7 @@ namespace Blackjack.Final
         {
             if (nullValue)
             {
-                OnPlayerValueChanged?.Invoke(0); // listener can decide how to display
+                OnPlayerValueChanged?.Invoke(0);
             }
             else
             {
@@ -130,9 +129,6 @@ namespace Blackjack.Final
             OnResultChanged?.Invoke(message);
         }
 
-        #endregion
-
-        #region Deck & Hand Logic
 
         private void InitDeck()
         {
@@ -204,9 +200,7 @@ namespace Blackjack.Final
             return total;
         }
 
-        #endregion
 
-        #region Public API (for Commands)
 
         public void TryStartDealRound()
         {
@@ -302,9 +296,7 @@ namespace Blackjack.Final
             RaiseDealerValueChanged(null);
         }
 
-        #endregion
 
-        #region Internal Round Logic
 
         private void StartDealerTurn()
         {
@@ -445,7 +437,7 @@ namespace Blackjack.Final
                     if (cardFactory != null)
                         cardFactory.RecycleCard(cardObj);
                     else
-                        Destroy(cardObj); // fallback
+                        Destroy(cardObj); // backup
                 }
             }
             playerCardViews.Clear();
@@ -458,7 +450,7 @@ namespace Blackjack.Final
                     if (cardFactory != null)
                         cardFactory.RecycleCard(cardObj);
                     else
-                        Destroy(cardObj); // fallback
+                        Destroy(cardObj); // backup
                 }
             }
             dealerCardViews.Clear();
@@ -496,6 +488,5 @@ namespace Blackjack.Final
             }
         }
 
-        #endregion
     }
 }

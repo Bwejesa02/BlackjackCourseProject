@@ -37,14 +37,14 @@ namespace Blackjack.Final
             }
             else
             {
-                // Fallback: grow pool if needed
+                // If pool is too small
                 card = Instantiate(cardPrefab, transform);
             }
 
             card.transform.SetParent(parent, false);
             card.SetActive(true);
 
-            // Reset basic transform
+            
             var rt = card.GetComponent<RectTransform>();
             if (rt != null)
             {
